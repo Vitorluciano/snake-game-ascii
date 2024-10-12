@@ -12,18 +12,19 @@ class Snake {
 		}
 
 		void update(char key_pressed, int screen_width, int screen_height) {
+			// TODO: I've swapped the keys as a workaround
 			switch (key_pressed) {
-				case 'A':
-					this->y = (this->y - 1) % screen_height; 
-					break;
-				case 'B':
-					this->y = (this->y + 1) % screen_height;
+				case 'D':
+					this->y = (this->y >= 0) ? (this->y - 1) % screen_height : screen_height - 1; 
 					break;
 				case 'C':
-					this->x = (this->x + 1) % screen_width;
+					this->y = (this->y >= 0) ? (this->y + 1) % screen_height : screen_height - 1;
 					break;
-				case 'D':
-					this->x = (this->x - 1) % screen_width;
+				case 'B':
+					this->x = (this->x >= 0) ? (this->x + 1) % screen_width : screen_width - 1;
+					break;
+				case 'A':
+					this->x = (this->x >= 0) ? (this->x - 1) % screen_width : screen_width - 1;
 					break;
 			}
 		}

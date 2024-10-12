@@ -33,7 +33,7 @@ class Background {
 			for (int i = 0; i < this->height; i++) {
 				for (int j = 0; j < this->width; j++) {
 					if (s->getX() == i && s->getY() == j) {
-						cout << s->getSymbol();
+						cout << "\x1B[34m" << s->getSymbol() << "\033[0m";
 					} else {
 						cout << grid[i][j];
 					}
