@@ -3,7 +3,6 @@ class Snake {
 		char symbol;
 		int x;
 		int y;
-
 	public:
 		Snake(char symbol, int x, int y) {
 			this->symbol = symbol;
