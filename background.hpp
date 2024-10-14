@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
 #include "snake.hpp"
+#include "food.hpp"
 
 using namespace std;
 
@@ -28,12 +29,14 @@ class Background {
 			}
 		}
 
-		void draw(Snake* s) {
+		void draw(Snake* s, Food* f) {
 			system("clear");
 			for (int i = 0; i < this->height; i++) {
 				for (int j = 0; j < this->width; j++) {
 					if (s->getX() == i && s->getY() == j) {
 						cout << "\x1B[34m" << s->getSymbol() << "\033[0m";
+					} else if (f->getX() == i && f->getY() == j) {
+						cout << f->getSymbol();
 					} else {
 						cout << grid[i][j];
 					}
